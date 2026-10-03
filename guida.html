@@ -47,9 +47,19 @@ ol.secs li b{color:var(--ink);font-weight:600}
 .note{margin-top:40px;padding:16px 18px;border-left:3px solid var(--acc);background:var(--soft);border-radius:0 10px 10px 0;font-size:13.5px;color:var(--mut)}
 footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--mut);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .table-wrap{overflow-x:auto}
-@media(max-width:700px){.doc{margin:0;border-radius:0;border:0;padding:32px 16px}.tips{grid-template-columns:1fr}ol.secs{columns:1}}
+.req-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.req{border:1px solid var(--line);border-radius:12px;padding:18px 20px;break-inside:avoid}
+.req h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin:0 0 12px}
+ul.check{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:13.5px;color:var(--mut)}
+ul.check li{position:relative;padding-left:28px}
+ul.check li:before{content:"";position:absolute;left:0;top:4px;width:14px;height:14px;border:1.5px solid var(--acc);border-radius:3px}
+ul.check li b{display:block;color:var(--ink);font-weight:600}
+.send{margin-top:18px;padding:18px 20px;background:var(--soft);border-radius:12px;font-size:13.5px;break-inside:avoid}
+.send b{display:block;margin-bottom:6px;font-size:14.5px}
+.send p{margin:0;color:var(--mut)}
+@media(max-width:700px){.req-grid{grid-template-columns:1fr}.doc{margin:0;border-radius:0;border:0;padding:32px 16px}.tips{grid-template-columns:1fr}ol.secs{columns:1}}
 @page{size:A4;margin:14mm}
-@media print{:root{--bg:#fff;--paper:#fff;--ink:#1b1b19;--mut:#5c5952;--line:#e4e0d8;--soft:#f3ede4;--acc:#b0793a}body{background:#fff;font-size:12.5px}.doc{margin:0;border:0;padding:0;max-width:none}h2{margin-top:24px}.site,.contact,.steps li{break-inside:avoid}.site-h,h2 .n,.steps li:before,.tip,.note{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media print{:root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#fff;--paper:#fff;--ink:#1b1b19;--mut:#5c5952;--line:#e4e0d8;--soft:#f3ede4;--acc:#b0793a}body{background:#fff;font-size:12.5px}.doc{margin:0;border:0;padding:0;max-width:none}h2{margin-top:24px}.site,.contact,.steps li,.req,.send{break-inside:avoid}.newpage{break-before:page;margin-top:0}.site-h,h2 .n,.steps li:before,.tip,.note{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
@@ -57,7 +67,7 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-si
 <header>
   <span class="kicker">Guida per il cliente</span>
   <h1>Come usare i tre siti</h1>
-  <p class="lead">Stratech, Structora e Northline: cosa trovi in ogni pagina, come contattare l’azienda e come richiedere una consulenza gratuita. Bastano cinque minuti di lettura.</p>
+  <p class="lead">Stratech, Structora e Northline: cosa trovi in ogni pagina, come contattare l’azienda, come richiedere una consulenza gratuita e quali dati ci servono per personalizzare il tuo sito.</p>
 </header>
 
 <h2><span class="n">1</span>Prima di iniziare</h2>
@@ -129,6 +139,71 @@ footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-si
   <li><div><b>Descrivi il progetto in poche righe</b>Tipo di intervento (nuova costruzione, ristrutturazione, interni), località, tempi indicativi e un recapito telefonico.</div></li>
   <li><div><b>Vieni ricontattato entro 24 ore lavorative</b>Un tecnico ti chiama per un primo confronto e, se serve, fissa un sopralluogo. La consulenza è gratuita e senza impegno.</div></li>
 </ul>
+
+<h2 class="newpage"><span class="n">5</span>Cosa ci serve per personalizzare il tuo sito</h2>
+<p>Per trasformare il modello scelto nel sito della tua azienda abbiamo bisogno di alcuni dati reali. <b>Più i dati sono dettagliati, più il sito finale sarà personalizzato e professionale:</b> testi su misura, foto dei tuoi lavori e contatti corretti fanno la differenza tra un sito generico e uno che ti rappresenta davvero.</p>
+<p class="muted">Usa questa lista come promemoria: spunta ogni voce man mano che la prepari.</p>
+
+<div class="req-grid">
+  <div class="req">
+    <h3>Identità del brand</h3>
+    <ul class="check">
+      <li><b>Logo</b>in alta qualità, preferibilmente vettoriale (SVG, AI, EPS o PDF), oppure PNG con sfondo trasparente. Se esiste, anche la versione chiara/negativa.</li>
+      <li><b>Colori primari e secondari</b>codici HEX o RGB se li hai; in alternativa un biglietto da visita o un documento con i colori aziendali.</li>
+      <li><b>Nome dell’azienda</b>come deve apparire sul sito, più la ragione sociale completa.</li>
+    </ul>
+  </div>
+  <div class="req">
+    <h3>Dati aziendali e contatti</h3>
+    <ul class="check">
+      <li><b>Indirizzo completo</b>via, numero civico, CAP, città e provincia della sede (ed eventuali altre sedi).</li>
+      <li><b>Telefono</b>fisso e/o cellulare da mostrare, ed eventuale numero WhatsApp.</li>
+      <li><b>Email</b>l’indirizzo a cui devono arrivare le richieste di consulenza.</li>
+      <li><b>Partita IVA</b>obbligatoria nel footer per legge.</li>
+      <li><b>Orari di apertura</b>giorni e fasce orarie, comprese pause e sabato.</li>
+    </ul>
+  </div>
+  <div class="req">
+    <h3>Social media</h3>
+    <ul class="check">
+      <li><b>Instagram</b>link completo al profilo.</li>
+      <li><b>LinkedIn</b>pagina aziendale o profilo del titolare.</li>
+      <li><b>Facebook</b>link alla pagina.</li>
+      <li><b>YouTube</b>link al canale, se presente. I social che non usi verranno rimossi dal sito.</li>
+    </ul>
+  </div>
+  <div class="req">
+    <h3>Team e responsabili</h3>
+    <ul class="check">
+      <li><b>Nomi e ruoli</b>titolare, direttore tecnico, responsabili di cantiere o dell’ufficio.</li>
+      <li><b>Foto ritratto</b>facoltative ma consigliate: luce naturale, sfondo neutro.</li>
+      <li><b>Breve presentazione</b>2–3 righe su storia ed esperienza dell’azienda.</li>
+    </ul>
+  </div>
+  <div class="req">
+    <h3>Foto di cantieri e progetti</h3>
+    <ul class="check">
+      <li><b>Progetti realizzati</b>almeno 6–10 lavori, con 3–5 foto ciascuno (esterni, interni, dettagli).</li>
+      <li><b>Cantieri in corso</b>foto delle varie fasi (fondazioni, struttura, tetto, finiture): sono ideali per la sezione “Cantiere”.</li>
+      <li><b>Per ogni progetto</b>nome, località, anno, tipologia, metri quadri e durata dei lavori.</li>
+      <li><b>Qualità</b>foto originali e orizzontali, almeno 2000 px di larghezza. Vanno bene anche quelle da smartphone recente.</li>
+    </ul>
+  </div>
+  <div class="req">
+    <h3>Testi per le sezioni</h3>
+    <ul class="check">
+      <li><b>Hero (apertura)</b>la frase che ti descrive in una riga, più un sottotitolo di 1–2 frasi.</li>
+      <li><b>Descrizione dei servizi</b>per ogni servizio: nome e 2–3 righe su cosa comprende.</li>
+      <li><b>Testimonial</b>2–4 recensioni di clienti con nome, ruolo o città e testo, con il loro consenso alla pubblicazione.</li>
+      <li><b>Numeri chiave</b>anni di attività, progetti consegnati, m² costruiti, persone nel team.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="send">
+  <b>Come inviarci il materiale</b>
+  <p>Rispondi all’email con cui hai ricevuto questa guida: i testi possono stare nel corpo del messaggio, mentre logo e foto vanno inviati tramite un link a Google Drive, Dropbox o WeTransfer, così da non perdere qualità. Se qualcosa non è pronto, invia intanto ciò che hai: completeremo il resto insieme.</p>
+</div>
 
 <div class="note"><b>Nota:</b> i tre siti sono modelli dimostrativi. Nomi, recapiti, numeri e progetti sono esempi e verranno sostituiti con i dati reali della tua azienda prima della pubblicazione definitiva.</div>
 
