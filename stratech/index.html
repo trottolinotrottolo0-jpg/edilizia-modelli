@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stratech — Ingegneria & Costruzioni</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a1730;--bg2:#0d1d3b;--card:#102246;--line:rgba(201,151,62,.35);--gold:#c9973e;--gold2:#e0b25c;--txt:#e9edf5;--mut:#a9b3c7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font:15px/1.6 Montserrat,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:4px;font-weight:500;font-size:14px;transition:.25s}
+.btn-gold{background:var(--gold);color:#fff}.btn-gold:hover{background:var(--gold2)}
+.btn-line{border:1px solid rgba(255,255,255,.6)}.btn-line:hover{border-color:var(--gold);color:var(--gold2)}
+.eyebrow{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+/* nav */
+header{position:absolute;inset:0 0 auto;z-index:5}
+nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0}
+.logo{display:flex;align-items:center;gap:12px}
+.logo b{font-size:24px;letter-spacing:.12em;font-weight:600;display:block;line-height:1}
+.logo small{font-size:9px;letter-spacing:.2em;color:var(--mut);text-transform:uppercase}
+.menu{display:flex;gap:40px;align-items:center;font-size:15px}
+.menu a.on{border-bottom:2px solid var(--gold);padding-bottom:6px}
+/* hero */
+.hero{position:relative;min-height:720px;background:linear-gradient(90deg,var(--bg) 30%,rgba(10,23,48,.55) 60%,rgba(10,23,48,.1)),url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&q=80) right center/cover}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:180px;background:linear-gradient(transparent,var(--bg))}
+.hero .wrap{position:relative;z-index:2;padding-top:190px}
+.hero-txt{border-left:2px solid var(--gold);padding-left:32px;max-width:560px}
+h1{font-size:54px;line-height:1.1;font-weight:600;text-transform:uppercase;letter-spacing:.01em}
+h1 em{font-style:normal;color:var(--gold)}
+.hero p{font-size:18px;color:#cfd6e4;margin:24px 0 34px;max-width:390px}
+.hero .ctas{display:flex;gap:16px}
+.badge{position:absolute;right:32px;bottom:90px;z-index:3;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:18px 22px;display:flex;gap:14px;align-items:center}
+.badge strong{font-size:32px;color:var(--gold);line-height:1}.badge span{font-size:12px;display:block}
+/* services */
+.svc{position:relative;z-index:4;margin-top:-30px;background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:8px;display:grid;grid-template-columns:repeat(4,1fr);padding:30px 0;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.svc div{text-align:center;padding:0 26px;border-right:1px solid rgba(255,255,255,.1)}
+.svc div:last-child{border:0}
+.svc svg{width:58px;height:58px;stroke:var(--gold);fill:none;stroke-width:1.4;margin:0 auto 18px}
+.svc h3{font-size:16px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px}
+.svc p{color:var(--mut);font-size:13.5px}
+/* about */
+.about{display:grid;grid-template-columns:1.05fr 1fr .85fr;margin-top:0;background:var(--bg2);border-top:1px solid rgba(255,255,255,.05)}
+.about{align-items:stretch}.about .ph{clip-path:polygon(0 0,100% 0,72% 100%,0 100%);height:330px}
+.about .tx{padding:44px 30px 44px 0;position:relative;z-index:2}
+.about h2{font-size:28px;font-weight:500;line-height:1.2;margin:14px 0 18px}
+.about p{color:var(--mut);font-size:13.5px;margin-bottom:20px}
+.btn-sm{padding:8px 20px;font-size:13px}
+.exp{border-left:1px solid var(--line);margin:40px 0;padding:0 36px}
+.exp ul{list-style:none;margin-top:18px}
+.exp li{display:flex;align-items:center;gap:16px;padding:9px 0;font-size:16px}
+.exp li i{width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;color:var(--gold);font-style:normal}
+/* projects */
+.proj{padding:40px 0 30px}
+.proj-head{display:flex;align-items:end;gap:40px;margin-bottom:22px}
+.proj-head h2{font-size:32px;font-weight:500;margin-top:4px}
+.proj-head p{flex:1;border-left:1px solid var(--line);padding-left:20px;color:var(--mut);font-size:13.5px;max-width:300px}
+.arrows{margin-left:auto;display:flex;gap:12px}
+.arrows a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.2)}
+.arrows a.g{background:var(--gold);border-color:var(--gold)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:8px;overflow:hidden;transition:.3s}
+.card:hover{transform:translateY(-4px);border-color:var(--line)}
+.card .im{height:130px}
+.card .meta{display:flex;justify-content:space-between;align-items:center;padding:14px 18px}
+.card h4{font-weight:500;font-size:15px}.card small{color:var(--mut);font-size:12px}
+.card .ic{width:44px;height:44px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold)}
+/* stats */
+.stats{margin:22px 0 40px;border:1px solid rgba(255,255,255,.1);border-radius:8px;display:grid;grid-template-columns:repeat(4,1fr);padding:22px 0}
+.stats div{display:flex;gap:14px;align-items:center;padding:0 28px;border-right:1px solid rgba(255,255,255,.1)}
+.stats div:last-child{border:0}
+.stats strong{font-size:28px;color:var(--gold);line-height:1;display:block;font-weight:600}
+.stats span{font-size:13px;display:block}.stats small{color:var(--mut);font-size:11px}
+.stats svg{width:40px;height:40px;stroke:var(--gold);fill:none;stroke-width:1.4;flex:none}
+/* testimonial + cta */
+.quote{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-bottom:60px}
+.q{background:var(--card);border-radius:8px;padding:30px;border-left:2px solid var(--gold)}
+.q p{font-size:16px;color:#d8deea;margin-bottom:16px}.q b{font-weight:600}.q small{color:var(--mut);display:block}
+.cta{background:linear-gradient(120deg,#132a55,#0b1834);border:1px solid var(--line);border-radius:8px;padding:34px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.cta h3{font-size:24px;font-weight:500;line-height:1.25}
+footer{border-top:1px solid rgba(255,255,255,.08);padding:26px 0;color:var(--mut);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between}
+@media(max-width:900px){.menu{display:none}h1{font-size:36px}.svc,.grid4,.stats{grid-template-columns:1fr 1fr;gap:20px}.svc div,.stats div{border:0}.about,.quote{grid-template-columns:1fr}.about .tx{margin:0;padding:30px}.about .ph{clip-path:none}.exp{margin:0 30px 30px;border:0;padding:0}.proj-head{flex-wrap:wrap}.badge{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="logo" href="#"><svg width="46" height="46" viewBox="0 0 46 46" fill="none" stroke="#c9973e" stroke-width="5"><path d="M23 4 8 19l15 15M23 42l15-15-15-15"/></svg><span><b>STRATECH</b><small>Costruiamo il domani</small></span></a>
+  <div class="menu"><a class="on" href="#">Home</a><a href="#servizi">Servizi</a><a href="#progetti">Progetti</a><a href="#chi">Chi siamo</a><a class="btn btn-gold" href="#contatto">Parla con un ingegnere</a></div>
+</nav></div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="hero-txt">
+    <h1>Ingegneria<br><em>innovativa</em><br>per costruzioni<br>che durano</h1>
+    <p>Soluzioni costruttive più solide, intelligenti e sostenibili per chi guarda lontano.</p>
+    <div class="ctas"><a class="btn btn-gold" href="#progetti">Esplora i progetti →</a><a class="btn btn-line" href="#servizi">I nostri servizi</a></div>
+  </div>
+</div>
+<div class="badge"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#c9973e" stroke-width="1.3"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="9" r="2"/><circle cx="19" cy="9" r="2"/><path d="M6 20c0-4 3-7 6-7s6 3 6 7M1 19c0-3 2-5 4-5M23 19c0-3-2-5-4-5"/></svg><div><strong>20+</strong><span>Anni di eccellenza</span></div></div>
+</section>
+
+<div class="wrap" id="servizi"><div class="svc">
+  <div><svg viewBox="0 0 64 64"><path d="M8 58h48M14 58V20l10-8v46M24 12h26M44 12v14M40 26h8v10h-8zM18 28h2M18 36h2M18 44h2"/></svg><h3>Infrastrutture</h3><p>Opere robuste per un territorio più forte e connesso.</p></div>
+  <div><svg viewBox="0 0 64 64"><path d="M10 58h44M16 58V18h14v40M30 58V8h18v50M20 24h6M20 32h6M20 40h6M35 16h8M35 24h8M35 32h8M35 40h8"/></svg><h3>Edifici commerciali</h3><p>Spazi funzionali che valorizzano il tuo business.</p></div>
+  <div><svg viewBox="0 0 64 64"><path d="M6 58h52M10 58V30h12v28M22 58V18h10v40M32 58V24h12v34M44 58V34h10v24M27 18V8M38 24v-8"/></svg><h3>Soluzioni urbane</h3><p>Rigenerazione sostenibile per le città di domani.</p></div>
+  <div><svg viewBox="0 0 64 64"><path d="M10 44a22 22 0 0 1 44 0M6 44h52v6H6zM28 22V12h8v10"/></svg><h3>Project management</h3><p>Regia completa: qualità, sicurezza e tempi garantiti.</p></div>
+</div></div>
+
+<section class="m-mf"><span class="eyeb">Il nostro manifesto</span><p class="txt">Non costruiamo solo edifici. Progettiamo <em>certezze</em>: tempi garantiti, costi trasparenti e un unico team di ingegneri che risponde di ogni <em>dettaglio</em>, dal primo rilievo al collaudo.</p><div class="row"><div><strong>35.000</strong><span>m² costruiti</span></div><div><strong>12</strong><span>cantieri attivi</span></div><div><strong>4,9</strong><span>valutazione media clienti</span></div><div><strong>0</strong><span>incidenti nel 2025</span></div></div></section>
+<section class="about" id="chi">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1000&q=80" alt=""></div>
+  <div class="tx"><span class="eyebrow">Chi siamo</span><h2>Ingegneria che progredisce.<br>Fiducia che si costruisce.</h2><p>In Stratech uniamo innovazione, competenza tecnica ed esperienza sul campo per realizzare opere di qualità che resistono al tempo.</p><a class="btn btn-gold btn-sm" href="#">Scopri il metodo</a></div>
+  <div class="exp"><span class="eyebrow">Le nostre competenze</span><ul>
+    <li><i>⚙</i>Ingegneria avanzata</li><li><i>▤</i>Pianificazione strategica</li><li><i>❦</i>Soluzioni sostenibili</li><li><i>▥</i>Design innovativo</li></ul></div>
+</section>
+
+<section class="m-build" id="cantiere"><div class="stick"><div class="m-ly"><img src="../media/01-fondazioni.jpg" alt="Cantiere: fondazioni"></div><div class="m-ly"><img src="../media/02-struttura.jpg" alt="Cantiere: struttura"></div><div class="m-ly"><img src="../media/03-copertura.jpg" alt="Cantiere: copertura"></div><div class="m-ly"><img src="../media/04-consegna.jpg" alt="Cantiere: consegna"></div><div class="m-shade"></div>
+ <div class="m-btop"><span>Cantiere reale · Fase <b class="m-phase">01</b>/04</span><span>Scorri per costruire ↓</span></div>
+ <div class="m-bui"><div><span class="eyeb">Dal terreno alle chiavi</span><div class="m-titles"><span>Fondazioni</span><span>Struttura</span><span>Copertura</span><span>Consegna</span></div><div class="m-descs"><p>Scavo, armature e getto del plinto: la base su cui poggia ogni cosa.</p><p>Il telaio sale piano dopo piano, verificato a ogni nodo.</p><p>Capriate e tetto chiudono l’involucro: isolamento e tenuta all’acqua.</p><p>Impianti, finiture e luci accese. Le chiavi sono tue.</p></div>
+ <div class="m-meter"><div class="m-bpct"><b>0</b><small>%</small></div><div class="m-track"><i></i></div></div></div><div></div><ul class="m-bsteps"><li>Fondazioni</li><li>Struttura</li><li>Copertura</li><li>Consegna</li></ul></div>
+ <span class="m-credit">Foto: Unsplash · Wikimedia Commons (CC BY-SA)</span></div></section>
+<section class="m-hs" id="cantieri"><div class="stick"><div class="track"><div class="intro"><span class="eyeb">Cantieri in corso</span><h2>Opere che stanno<br>prendendo forma.</h2><p>Una selezione dei progetti che il nostro team sta seguendo in questo momento.</p><div class="hint">Scorri</div></div><a class="m-hcard" href="#"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=80" alt=""><span class="idx">01 / 04</span><div class="hinfo"><h3>Torre Meridiana</h3><dl><div><dt>Superficie</dt><dd>8400 m²</dd></div><div><dt>Durata</dt><dd>26 mesi</dd></div><div><dt>Puntualità</dt><dd>100%</dd></div></dl></div></a><a class="m-hcard" href="#"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&q=80" alt=""><span class="idx">02 / 04</span><div class="hinfo"><h3>Polo Logistico Nord</h3><dl><div><dt>Superficie</dt><dd>12500 m²</dd></div><div><dt>Durata</dt><dd>18 mesi</dd></div><div><dt>Puntualità</dt><dd>100%</dd></div></dl></div></a><a class="m-hcard" href="#"><img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?w=1400&q=80" alt=""><span class="idx">03 / 04</span><div class="hinfo"><h3>Residenze Parco</h3><dl><div><dt>Superficie</dt><dd>5200 m²</dd></div><div><dt>Durata</dt><dd>22 mesi</dd></div><div><dt>Puntualità</dt><dd>100%</dd></div></dl></div></a><a class="m-hcard" href="#"><img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?w=1400&q=80" alt=""><span class="idx">04 / 04</span><div class="hinfo"><h3>Headquarters Velia</h3><dl><div><dt>Superficie</dt><dd>3900 m²</dd></div><div><dt>Durata</dt><dd>15 mesi</dd></div><div><dt>Puntualità</dt><dd>100%</dd></div></dl></div></a></div></div></section>
+<section class="proj" id="progetti"><div class="wrap">
+  <div class="proj-head"><div><span class="eyebrow">I nostri lavori</span><h2>Progetti in evidenza</h2></div><p>Da landmark iconici a comunità sostenibili: costruiamo ciò che dà forma al futuro.</p><div class="arrows"><a href="#">←</a><a class="g" href="#">→</a></div></div>
+  <div class="grid4">
+    <a class="card" href="#"><div class="im"><img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=600&q=80" alt=""></div><div class="meta"><div><h4>Torre Aurora</h4><small>Sviluppo verticale</small></div><span class="ic">▥</span></div></a>
+    <a class="card" href="#"><div class="im"><img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?w=600&q=80" alt=""></div><div class="meta"><div><h4>Sede Corporate</h4><small>Edificio direzionale</small></div><span class="ic">▤</span></div></a>
+    <a class="card" href="#"><div class="im"><img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=600&q=80" alt=""></div><div class="meta"><div><h4>Ponte sul Fiume</h4><small>Infrastruttura</small></div><span class="ic">⌒</span></div></a>
+    <a class="card" href="#"><div class="im"><img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?w=600&q=80" alt=""></div><div class="meta"><div><h4>Business Center</h4><small>Sviluppo urbano</small></div><span class="ic">▦</span></div></a>
+  </div>
+  <div class="stats">
+    <div><svg viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M12 14v4M8 21h8"/></svg><p><strong>150+</strong><span>Progetti completati</span><small>In ogni settore</small></p></div>
+    <div><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M16 5a3 3 0 0 1 0 6M18 14c2 1 3 3 3 6"/></svg><p><strong>98%</strong><span>Clienti soddisfatti</span><small>Qualità di cui fidarsi</small></p></div>
+    <div><svg viewBox="0 0 24 24"><path d="M4 16a8 8 0 0 1 16 0M2 16h20v3H2zM10 8V4h4v4"/></svg><p><strong>500+</strong><span>Professionisti</span><small>Dietro ogni successo</small></p></div>
+    <div><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg><p><strong style="font-size:20px">Sicurezza prima</strong><span>Obiettivo zero incidenti</span><small>In ogni cantiere</small></p></div>
+  </div>
+  <div class="quote">
+    <div class="q"><p>“Stratech ha gestito la nostra nuova sede dal progetto alla consegna con una precisione rara. Tempi rispettati al giorno.”</p><b>Marco Ferretti</b><small>CEO, Ferretti Logistica</small></div>
+    <div class="cta" id="contatto"><span class="eyebrow">Il prossimo progetto</span><h3>Hai un’opera ambiziosa in mente? Progettiamola insieme.</h3><a class="btn btn-gold" href="#" style="align-self:start">Prenota una consulenza tecnica →</a></div>
+  </div>
+</div></section>
+<footer><div class="wrap"><span>© 2026 Stratech Ingegneria & Costruzioni</span><span>Milano · Roma · Torino</span></div></footer>
+<!-- ===== MOTION LAYER ===== -->
+<style>
+:root{--m-bg:#0a1730;--m-ink:#e9edf5;--m-acc:#c9973e;--m-ring:rgba(233,237,245,.55);--m-font:Montserrat;--m-hbg:#081226;--m-hink:#e9edf5;--m-mbg:#0a1730;--m-rad:8px;--m-hfont:500 clamp(30px,3.2vw,46px)/1.15 Montserrat;--m-cfont:500 26px/1.15 Montserrat;--m-mfont:500 clamp(28px,3.4vw,50px)/1.25 Montserrat}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+::selection{background:var(--m-acc);color:var(--m-bg)}
+.m-loader{position:fixed;inset:0;z-index:9999;background:var(--m-bg);color:var(--m-ink);display:flex;align-items:flex-end;justify-content:space-between;padding:40px 48px;transition:clip-path 1.1s cubic-bezier(.77,0,.18,1);clip-path:inset(0 0 0 0)}
+.m-loader.out{clip-path:inset(0 0 100% 0)}
+.m-loader b{font:500 clamp(40px,8vw,110px)/1 var(--m-font,inherit);letter-spacing:-.03em}
+.m-loader span{font-size:13px;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
+.m-loader i{position:absolute;left:0;bottom:0;height:2px;background:var(--m-acc);width:0;transition:width .2s linear}
+.m-bar{position:fixed;top:0;left:0;height:2px;background:var(--m-acc);z-index:9000;width:100%;transform-origin:0 50%;transform:scaleX(0)}
+@media (pointer:fine){html.m-cur,html.m-cur *{cursor:none!important}}
+.m-dot,.m-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9998;border-radius:50%;will-change:transform}
+.m-dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--m-acc)}
+.m-ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:1px solid var(--m-ring);display:grid;place-items:center;transition:width .45s cubic-bezier(.22,1,.36,1),height .45s cubic-bezier(.22,1,.36,1),margin .45s cubic-bezier(.22,1,.36,1),background .35s,border-color .35s}
+.m-ring em{font:600 10px/1 inherit;font-style:normal;letter-spacing:.16em;text-transform:uppercase;color:var(--m-bg);opacity:0;transition:opacity .3s}
+.m-ring.link{width:64px;height:64px;margin:-32px 0 0 -32px;border-color:var(--m-acc);background:color-mix(in srgb,var(--m-acc) 12%,transparent)}
+.m-ring.view{width:96px;height:96px;margin:-48px 0 0 -48px;background:var(--m-acc);border-color:var(--m-acc)}
+.m-ring.view em{opacity:1}
+.m-ring.down{scale:.85}
+@media (pointer:coarse){.m-dot,.m-ring{display:none}}
+.m-rv{opacity:0;transform:translate3d(0,46px,0);transition:opacity 1.1s cubic-bezier(.22,1,.36,1),transform 1.1s cubic-bezier(.22,1,.36,1);transition-delay:var(--d,0s)}
+.m-rv.in{opacity:1;transform:none}
+.m-ln{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.m-ln>span{display:inline-block;transform:translate3d(0,110%,0) rotate(3deg);transform-origin:0 100%;transition:transform 1.3s cubic-bezier(.19,1,.22,1);transition-delay:var(--d,0s)}
+.m-go .m-ln>span{transform:none}
+.m-img{clip-path:inset(100% 0 0 0);transition:clip-path 1.4s cubic-bezier(.77,0,.18,1);transition-delay:var(--d,0s)}
+.m-img img{transform:scale(1.3);transition:transform 2s cubic-bezier(.22,1,.36,1);transition-delay:var(--d,0s)}
+.m-img.in{clip-path:inset(0 0 0 0)}.m-img.in img{transform:scale(1)}
+.m-par{overflow:hidden}.m-par img{will-change:transform}
+.m-hov img{transition:transform 1.2s cubic-bezier(.22,1,.36,1)!important}
+.m-hov:hover img{transform:scale(1.07)!important}
+.m-mag{transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.m-num{font-variant-numeric:tabular-nums}
+
+/* === cantiere reale: rivelazione a scorrimento === */
+.m-build{position:relative;height:420vh;background:#0b0b0b;color:#fff}
+.m-build .stick{position:sticky;top:0;height:100vh;overflow:hidden}
+.m-ly{position:absolute;inset:0;clip-path:inset(calc(var(--c,1)*100%) 0 0 0);will-change:clip-path}
+.m-ly:first-child{--c:0}
+.m-ly img{width:100%;height:100%;object-fit:cover;transform:scale(calc(1.18 - var(--k,0)*.18));will-change:transform}
+.m-ly:after{content:"";position:absolute;left:0;right:0;top:calc(var(--c,1)*100%);height:2px;background:var(--m-acc);box-shadow:0 0 24px var(--m-acc);opacity:calc(var(--c,0)*(1 - var(--c,0))*4)}
+.m-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78) 0,rgba(0,0,0,.35) 45%,rgba(0,0,0,.05) 70%),linear-gradient(0deg,rgba(0,0,0,.55),transparent 40%);pointer-events:none}
+.m-bui{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,520px) 1fr auto;align-items:end;gap:40px;padding:0 6vw 9vh}
+.m-bui .eyeb{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--m-acc)}
+.m-bui h2{font:var(--m-hfont);margin:16px 0 14px;color:#fff}
+.m-titles{position:relative;height:1.3em;margin-top:14px;font:var(--m-hfont);overflow:hidden;margin-bottom:12px}
+.m-titles span{position:absolute;left:0;top:0;transform:translateY(110%);transition:transform .9s cubic-bezier(.19,1,.22,1)}
+.m-titles span.on{transform:none}.m-titles span.past{transform:translateY(-110%)}
+.m-descs{position:relative;min-height:3.4em}
+.m-descs p{position:absolute;inset:0;opacity:0;transform:translateY(12px);transition:opacity .6s,transform .8s cubic-bezier(.22,1,.36,1);color:rgba(255,255,255,.78);max-width:420px}
+.m-descs p.on{opacity:1;transform:none}
+.m-meter{display:flex;align-items:flex-end;gap:22px;margin-top:26px}
+.m-bpct{font:500 clamp(64px,8vw,120px)/.85 var(--m-font,inherit);letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.m-bpct small{font-size:.32em;opacity:.6;margin-left:4px}
+.m-track{flex:1;max-width:240px;height:2px;background:rgba(255,255,255,.25);position:relative;margin-bottom:14px}
+.m-track i{position:absolute;inset:0;background:var(--m-acc);transform-origin:0 50%;transform:scaleX(var(--p,0))}
+.m-bsteps{list-style:none;display:grid;gap:14px;justify-self:end;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.m-bsteps li{display:flex;gap:14px;align-items:center;opacity:.4;transition:opacity .5s}
+.m-bsteps li:before{content:"";width:22px;height:1px;background:currentColor;transition:width .6s cubic-bezier(.22,1,.36,1),background .4s}
+.m-bsteps li.on{opacity:1}.m-bsteps li.on:before{width:48px;background:var(--m-acc)}
+.m-btop{position:absolute;top:30px;left:6vw;right:6vw;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.m-credit{position:absolute;right:16px;bottom:10px;font-size:10px;color:rgba(255,255,255,.45)}
+/* === galleria orizzontale === */
+.m-hs{position:relative;background:var(--m-hbg);color:var(--m-hink)}
+.m-hs .stick{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center}
+.m-hs .track{display:flex;gap:3vw;padding:0 6vw;will-change:transform;align-items:center}
+.m-hs .intro{flex:0 0 min(420px,80vw)}
+.m-hs .intro .eyeb{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--m-acc)}
+.m-hs .intro h2{font:var(--m-hfont);margin:16px 0 18px}
+.m-hs .intro p{opacity:.7}
+.m-hs .hint{margin-top:30px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;display:flex;gap:14px;align-items:center}
+.m-hs .hint:after{content:"";width:60px;height:1px;background:var(--m-acc)}
+.m-hcard{flex:0 0 min(46vw,640px);height:64vh;position:relative;overflow:hidden;border-radius:var(--m-rad,0);color:#fff}
+.m-hcard img{width:100%;height:100%;object-fit:cover;transform:scale(1.12) translateX(var(--sx,0));transition:filter .6s}
+.m-hcard:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.75),transparent 55%)}
+.m-hcard .hinfo{position:absolute;left:28px;right:28px;bottom:24px;z-index:2}
+.m-hcard .idx{position:absolute;top:22px;left:28px;z-index:2;font-size:12px;letter-spacing:.2em}
+.m-hcard h3{font:var(--m-cfont);margin-bottom:14px}
+.m-hcard dl{display:flex;gap:30px;border-top:1px solid rgba(255,255,255,.3);padding-top:14px}
+.m-hcard dt{font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.65}
+.m-hcard dd{font-size:22px;font-weight:500}
+/* === manifesto === */
+.m-mf{background:var(--m-mbg,var(--m-hbg));color:var(--m-hink);padding:22vh 6vw 16vh}
+.m-mf .eyeb{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--m-acc)}
+.m-mf .txt{font:var(--m-mfont);max-width:1150px;margin:26px 0 12vh}
+.m-mf .w{opacity:.14;transition:opacity .25s linear}
+.m-mf .w.on{opacity:1}
+.m-mf .w.acc{color:var(--m-acc)}
+.m-mf .row{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid color-mix(in srgb,var(--m-hink) 20%,transparent)}
+.m-mf .row div{padding:28px 20px 0 0}
+.m-mf .row strong{display:block;font:500 clamp(42px,5vw,72px)/1 var(--m-font,inherit);letter-spacing:-.04em}
+.m-mf .row span{font-size:13px;opacity:.65}
+@media(max-width:900px){.m-bui{grid-template-columns:1fr;padding-bottom:6vh}.m-bsteps{justify-self:start;grid-template-columns:1fr 1fr}.m-hcard{flex-basis:80vw;height:58vh}.m-mf .row{grid-template-columns:1fr 1fr;gap:20px}}
+@media (prefers-reduced-motion:reduce){.m-rv,.m-ln>span,.m-img,.m-img img{transition:none!important;opacity:1!important;transform:none!important;clip-path:none!important}.m-loader{display:none}.m-mf .w{opacity:1}}
+</style>
+
+<div class="m-loader" aria-hidden="true"><b>STRATECH</b><span id="m-count">000</span><i id="m-lbar"></i></div>
+<div class="m-bar"></div>
+<div class="m-dot"></div><div class="m-ring"><em>Vedi</em></div>
+
+<script>window.MOTION={"split": ".hero h1", "hero": ".hero-txt", "heroBg": ".hero", "reveal": ".hero p,.hero .ctas,.badge,.svc>div,.about .tx>*,.exp .eyebrow,.exp li,.proj-head>*,.card,.stats>div,.q,.cta>*,footer .wrap>*,.m-mf .eyeb,.m-mf .row>div,.m-hs .intro>*", "imgs": "", "par": ".about .ph", "hover": ".card", "view": ".card", "mag": ".btn,.arrows a"}</script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(()=>{
+const C=window.MOTION||{},$=(s,r=document)=>s?[...r.querySelectorAll(s)]:[],RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),ease=t=>1-Math.pow(1-t,3),eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+let lenis=null;
+if(!RM&&window.Lenis){lenis=new Lenis({duration:1.25,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true});
+  $('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const h=a.getAttribute('href');if(h.length>1&&document.querySelector(h)){e.preventDefault();lenis.scrollTo(h,{offset:-20,duration:1.6})}}));}
+$(C.split).forEach(el=>{el.innerHTML=el.innerHTML.split(/<br\s*\/?>/i).map((l,i)=>`<span class="m-ln"><span style="--d:${.12*i+.05}s">${l}</span></span>`).join('')});
+$(C.reveal).forEach(el=>{if(!el.closest('.m-ln'))el.classList.add('m-rv')});
+$(C.imgs).forEach(el=>el.classList.add('m-img'));
+$(C.hover).forEach(el=>el.classList.add('m-hov'));
+$(C.par).forEach(el=>el.classList.add('m-par'));
+const groups=new Map();$('.m-rv,.m-img').forEach(el=>{const p=el.parentElement;groups.set(p,(groups.get(p)||0)+1);if(!el.style.getPropertyValue('--d'))el.style.setProperty('--d',((groups.get(p)-1)*.09)+'s')});
+/* manifesto words */
+$('.m-mf .txt').forEach(t=>{t.innerHTML=t.innerHTML.replace(/(<[^>]+>)|([^\s<]+)/g,(m,tag,w)=>tag?tag:`<span class="w">${w}</span>`);$('em .w',t).forEach(w=>w.classList.add('acc'))});
+/* contatori automatici su ogni numero */
+const NUM=/^(\s*[€+~]?\s*)(\d{1,3}(?:\.\d{3})+|\d+)(?:,(\d+))?(\s*(?:\+|%|k|K|mq|m²|mesi|anni|gg|h|x)?\s*)$/;
+const SKIP='.m-loader,.m-steps,.m-bui,nav,header,footer,script,style,.num,.n,.y,.idx,form,.info,.lang,.cart,time';
+const counters=[];
+document.querySelectorAll('body *').forEach(el=>{if(el.children.length||el.closest(SKIP))return;const s=el.textContent;const m=s.match(NUM);if(!m)return;
+  const intS=m[2],dec=m[3]||'';if(/^0\d/.test(intS))return;const n=parseFloat(intS.replace(/\./g,'')+(dec?'.'+dec:''));
+  if(!dec&&!m[4].trim()&&n>=1900&&n<=2100)return;
+  counters.push({el,pre:m[1],suf:m[4],n,dec:dec.length,sep:intS.includes('.')});el.classList.add('m-num');el.textContent=m[1]+(dec?(0).toFixed(dec.length).replace('.',','):'0')+m[4]});
+const fmt=(v,c)=>{let s=c.dec?v.toFixed(c.dec):String(Math.round(v));let[i,d]=s.split('.');if(c.sep)i=i.replace(/\B(?=(\d{3})+(?!\d))/g,'.');return i+(d?','+d:'')};
+const runCount=c=>{if(c.done)return;c.done=true;const t0=performance.now(),dur=1600+Math.min(900,c.n*2);const tick=t=>{const p=clamp((t-t0)/dur);c.el.textContent=c.pre+fmt(ease(p)*c.n,c)+c.suf;if(p<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');io.unobserve(e.target);const c=counters.find(c=>c.el===e.target);if(c)runCount(c)}),{threshold:.2,rootMargin:'0px 0px -5% 0px'});
+const startReveals=()=>{$('.m-rv,.m-img').forEach(el=>io.observe(el));counters.forEach(c=>io.observe(c.el));document.body.classList.add('m-go')};
+const L=document.querySelector('.m-loader');
+if(RM){L.remove();startReveals()}else{let n=0;const cnt=document.getElementById('m-count'),lb=document.getElementById('m-lbar');
+  const iv=setInterval(()=>{n=Math.min(100,n+Math.ceil(Math.random()*9));cnt.textContent=String(n).padStart(3,'0');lb.style.width=n+'%';
+    if(n>=100){clearInterval(iv);setTimeout(()=>{L.classList.add('out');setTimeout(startReveals,350);setTimeout(()=>L.remove(),1300)},250)}},55)}
+const dot=document.querySelector('.m-dot'),ring=document.querySelector('.m-ring');
+if(matchMedia('(pointer:fine)').matches&&!RM){document.documentElement.classList.add('m-cur');
+  let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate3d(${mx}px,${my}px,0)`});
+  addEventListener('mousedown',()=>ring.classList.add('down'));addEventListener('mouseup',()=>ring.classList.remove('down'));
+  const loop=()=>{rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.transform=`translate3d(${rx}px,${ry}px,0)`;requestAnimationFrame(loop)};loop();
+  document.addEventListener('mouseover',e=>{const v=e.target.closest((C.view?C.view+',':'')+'.m-hcard'),a=e.target.closest('a,button,input,select,textarea');ring.classList.toggle('view',!!v);ring.classList.toggle('link',!v&&!!a)});
+  $(C.mag||'.btn').forEach(b=>{b.classList.add('m-mag');b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`});b.addEventListener('mouseleave',()=>b.style.transform='')});
+}else{dot.remove();ring.remove()}
+/* elementi guidati dallo scroll */
+const bar=document.querySelector('.m-bar'),hero=document.querySelector(C.hero||'none'),heroBg=document.querySelector(C.heroBg||'none'),pars=$('.m-par img');
+const B=document.querySelector('.m-build'),lys=B?$('.m-ly',B):[],ttl=B?$('.m-titles span',B):[],dsc=B?$('.m-descs p',B):[],bst=B?$('.m-bsteps li',B):[],bpct=B&&B.querySelector('.m-bpct b'),btr=B&&B.querySelector('.m-track'),bph=B&&B.querySelector('.m-phase');
+const HS=$('.m-hs').map(s=>({s,t:s.querySelector('.track'),cards:$('.m-hcard img',s)}));
+const sizeHS=()=>HS.forEach(h=>{h.dist=Math.max(0,h.t.scrollWidth-innerWidth);h.s.style.height=(h.dist+innerHeight)+'px'});sizeHS();addEventListener('resize',sizeHS);
+const MF=$('.m-mf').map(s=>({s,w:$('.w',s)}));
+let lastIdx=-1;
+const frame=()=>{const y=scrollY,H=document.documentElement.scrollHeight-innerHeight,vh=innerHeight;
+  bar.style.transform=`scaleX(${H>0?y/H:0})`;
+  if(RM)return;
+  if(hero){const p=clamp(y/vh);hero.style.transform=`translate3d(0,${p*120}px,0)`;hero.style.opacity=1-p*1.1}
+  if(heroBg)heroBg.style.backgroundPositionY=`calc(50% + ${y*.35}px)`;
+  pars.forEach(img=>{const r=img.parentElement.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;img.style.transform=`translate3d(0,${(r.top+r.height/2-vh/2)/vh*-60}px,0) scale(1.18)`});
+  if(B){const r=B.getBoundingClientRect(),p=clamp(-r.top/(r.height-vh)),n=lys.length,t=p*(n-1);
+    lys.forEach((l,i)=>{if(i){const c=1-eio(clamp((t-(i-1)-.18)/.64));l.style.setProperty('--c',c)}l.style.setProperty('--k',clamp(t-i+1,0,2)/2)});
+    const idx=Math.min(n-1,Math.round(t-.0));
+    if(idx!==lastIdx){lastIdx=idx;ttl.forEach((s,i)=>{s.classList.toggle('on',i===idx);s.classList.toggle('past',i<idx)});dsc.forEach((d,i)=>d.classList.toggle('on',i===idx));bst.forEach((s,i)=>s.classList.toggle('on',i<=idx));if(bph)bph.textContent=String(idx+1).padStart(2,'0')}
+    bpct.textContent=Math.round(p*100);btr.style.setProperty('--p',p)}
+  HS.forEach(h=>{const r=h.s.getBoundingClientRect(),p=clamp(-r.top/Math.max(1,h.dist));h.t.style.transform=`translate3d(${-p*h.dist}px,0,0)`;h.cards.forEach(img=>{const b=img.parentElement.getBoundingClientRect();img.style.setProperty('--sx',((b.left+b.width/2-innerWidth/2)/innerWidth*-6)+'%')})});
+  MF.forEach(m=>{const r=m.s.querySelector('.txt').getBoundingClientRect(),p=clamp((vh*.85-r.top)/(r.height+vh*.35)),k=Math.floor(p*m.w.length*1.02);m.w.forEach((w,i)=>w.classList.toggle('on',i<k))});
+};
+if(lenis){const raf=t=>{lenis.raf(t);frame();requestAnimationFrame(raf)};requestAnimationFrame(raf)}else{addEventListener('scroll',frame,{passive:true});frame()}
+})();
+</script>
+<!-- ===== /MOTION LAYER ===== -->
+</body>
+</html>

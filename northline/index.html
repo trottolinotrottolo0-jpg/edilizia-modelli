@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Northline Atelier — Architettura & Interni</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f4ef;--bg2:#efebe4;--ink:#1d1d1b;--mut:#4a4843;--olive:#5c5e45;--olive2:#7f8257;--line:#d9d3c8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:13.5px/1.7 Jost,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.serif{font-family:"Cormorant Garamond",serif}
+.cap{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.dash:after{content:"";display:inline-block;width:28px;height:1px;background:currentColor;vertical-align:middle;margin-left:12px}
+.dash-l:before{content:"";display:inline-block;width:28px;height:1px;background:currentColor;vertical-align:middle;margin-right:12px}
+.arrow:after{content:"⟶";margin-left:14px;font-size:15px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 36px}
+/* nav */
+nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:20px 38px}
+.logo{font-family:"Cormorant Garamond",serif;font-size:20px;letter-spacing:.2em;line-height:1;text-align:center;width:fit-content}
+.logo small{display:block;font-family:Jost;font-size:8px;letter-spacing:.42em;margin-top:4px}
+.menu{display:flex;gap:42px}
+.tools{display:flex;justify-content:end;gap:26px;align-items:center}
+.tools .lang span{color:var(--olive2)}
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1.25fr;min-height:600px;border-bottom:1px solid var(--line);background:radial-gradient(circle at 10% 90%,rgba(0,0,0,.03) 0 1px,transparent 1px) 0 0/14px 14px}
+.hero .tx{padding:60px 40px 60px 92px;display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(48px,5.6vw,76px);line-height:1;margin:26px 0 22px;letter-spacing:-.01em}
+.hero h1 em{color:var(--olive2)}
+.hero p{max-width:300px;margin-bottom:34px}
+.btn{display:inline-flex;align-items:center;background:var(--olive);color:#fff;padding:16px 24px;width:fit-content;transition:.25s}
+.btn:hover{background:var(--ink)}
+.btn-o{background:none;color:var(--ink);border:1px solid var(--ink)}
+.btn-o:hover{background:var(--ink);color:#fff}
+.hero .ph{clip-path:polygon(28% 0,100% 0,100% 100%,0 100%)}
+/* featured */
+.feat{padding:36px 0 34px;border-bottom:1px solid var(--line)}
+.row{display:flex;justify-content:space-between;margin-bottom:20px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{border:1px solid var(--line);background:#fbf9f6;transition:.3s}
+.card:hover{box-shadow:0 20px 40px rgba(0,0,0,.07)}
+.card .im{height:240px;overflow:hidden}.card img{transition:.6s}.card:hover img{transform:scale(1.04)}
+.card .m{padding:16px 16px 14px;display:grid;grid-template-columns:1fr auto;row-gap:12px}
+.card .m small{font-size:11px;color:var(--mut)}
+/* studio */
+.studio{display:grid;grid-template-columns:1fr 1.15fr;gap:24px;padding:36px 0;border-bottom:1px solid var(--line);position:relative}
+.studio .ph{height:270px}
+.studio h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:30px;line-height:1.15;margin:20px 0 18px}
+.studio p{max-width:440px;margin-bottom:28px}
+/* stats */
+.stats{background:var(--bg2);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-around;padding:36px 0}
+.stats div{text-align:center}
+.stats strong{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:52px;line-height:1;display:block}
+.stats hr{flex:0 0 80px;border:0;border-top:1px solid #cfc8bb}
+/* services */
+.svc{padding:48px 0 60px;border-bottom:1px solid var(--line)}
+.svc .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:44px;padding:0 60px}
+.svc svg{width:30px;height:30px;stroke:var(--ink);fill:none;stroke-width:1.2;margin-bottom:16px}
+.svc h3{margin-bottom:12px}
+.svc p{margin-bottom:24px}
+/* testimonial */
+.testi{padding:70px 0;text-align:center;border-bottom:1px solid var(--line)}
+.testi blockquote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:32px;line-height:1.3;max-width:780px;margin:22px auto}
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.5fr 1fr;border-bottom:1px solid var(--line)}
+.contact>div{padding:56px 36px}
+.contact>div+div{border-left:1px solid var(--line)}
+.contact h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:38px;line-height:1.1;padding-left:30px}
+.contact h2+hr{width:26px;border:0;border-top:1px solid var(--ink);margin:22px 0 22px 30px}
+.contact .intro p{padding-left:30px}
+form label{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+form input,form select,form textarea{display:block;width:100%;background:none;border:0;border-bottom:1px solid #9b968c;padding:8px 0;font:inherit;outline:0}
+form textarea{height:52px;resize:vertical}
+.contact .info{background:var(--bg2)}
+.info .logo{text-align:left;margin:20px 0 22px}
+.info ul{list-style:none;display:grid;gap:12px;margin:24px 0 30px}
+.info li:before{content:"◦ ";color:var(--olive)}
+footer{background:var(--olive);color:#e9e7dc;font-size:10px;letter-spacing:.14em;text-transform:uppercase;display:flex;justify-content:space-between;padding:12px 40px}
+@media(max-width:900px){.menu{display:none}nav{grid-template-columns:1fr 1fr}.hero,.studio,.contact{grid-template-columns:1fr}.hero .tx{padding:50px 24px}.hero .ph{clip-path:none;height:340px}.cards{grid-template-columns:1fr}.svc .grid{grid-template-columns:1fr 1fr;padding:0}.stats{flex-wrap:wrap;gap:24px}.stats hr{display:none}.contact>div+div{border-left:0;border-top:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="#">NORTHLINE<small>ATELIER</small></a>
+  <div class="menu cap"><a href="#progetti">Progetti</a><a href="#studio">Studio</a><a href="#servizi">Servizi</a><a href="#">Journal</a><a href="#contatti">Contatti</a></div>
+  <div class="tools cap"><span class="lang">IT &nbsp;|&nbsp; <span>EN</span></span><span>|</span><span>⌕</span><span>☰</span></div>
+</nav>
+
+<section class="hero">
+  <div class="tx">
+    <span class="cap dash-l">Spazi. Pensati con intenzione.</span>
+    <h1>Architettura<br>che eleva<br><em>la vita.</em></h1>
+    <p>Northline Atelier è uno studio di architettura e costruzione che crea spazi senza tempo, in equilibrio tra bellezza, funzione e luogo.</p>
+    <a class="btn cap arrow" href="#progetti">Esplora i nostri lavori</a>
+  </div>
+  <div class="ph"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80" alt=""></div>
+</section>
+
+<section class="feat" id="progetti"><div class="wrap">
+  <div class="row cap"><span>Progetti in evidenza</span><a class="arrow" href="#">Tutti i progetti</a></div>
+  <div class="cards">
+    <a class="card" href="#"><div class="im"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80" alt=""></div><div class="m cap"><span>Padiglione nel Deserto</span><span>Residenziale</span><small>Noto, Sicilia</small><span>⟶</span></div></a>
+    <a class="card" href="#"><div class="im"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt=""></div><div class="m cap"><span>Casa sul Crinale</span><span>Residenziale</span><small>Colline del Chianti</small><span>⟶</span></div></a>
+    <a class="card" href="#"><div class="im"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80" alt=""></div><div class="m cap"><span>Loft sul Porto</span><span>Hospitality</span><small>Genova</small><span>⟶</span></div></a>
+  </div>
+</div></section>
+
+<section class="m-mf"><span class="eyeb">La nostra filosofia</span><p class="txt">Ogni spazio nasce dall’<em>ascolto</em>. Disegniamo case che invecchiano con grazia, costruite con materiali onesti e la cura di chi sa che una casa è per <em>sempre</em>.</p><div class="row"><div><strong>145+</strong><span>progetti consegnati</span></div><div><strong>21</strong><span>anni di pratica</span></div><div><strong>98%</strong><span>progetti consegnati nei tempi</span></div><div><strong>14</strong><span>regioni servite</span></div></div></section>
+<section class="wrap studio" id="studio">
+  <div class="ph"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1000&q=80" alt=""></div>
+  <div><span class="cap dash">Il nostro studio</span>
+    <h2>Progettiamo con chiarezza.<br>Costruiamo con cura.</h2>
+    <p>Ogni progetto inizia dall’ascolto: capire come le persone vivono, lavorano e si relazionano con ciò che le circonda. Un processo condiviso, ponderato, guidato da mestiere e contesto.</p>
+    <a class="btn btn-o cap" href="#">Conosci il nostro metodo</a></div>
+</section>
+
+<section class="m-build" id="cantiere"><div class="stick"><div class="m-ly"><img src="../media/01-fondazioni.jpg" alt="Cantiere: fondazioni"></div><div class="m-ly"><img src="../media/02-struttura.jpg" alt="Cantiere: struttura"></div><div class="m-ly"><img src="../media/03-copertura.jpg" alt="Cantiere: copertura"></div><div class="m-ly"><img src="../media/04-consegna.jpg" alt="Cantiere: consegna"></div><div class="m-shade"></div>
+ <div class="m-btop"><span>Cantiere reale · Fase <b class="m-phase">01</b>/04</span><span>Scorri per costruire ↓</span></div>
+ <div class="m-bui"><div><span class="eyeb">Il nostro processo</span><div class="m-titles"><span>Fondazioni</span><span>Struttura</span><span>Copertura</span><span>Consegna</span></div><div class="m-descs"><p>Scavo, armature e getto del plinto: la base su cui poggia ogni cosa.</p><p>Il telaio sale piano dopo piano, verificato a ogni nodo.</p><p>Capriate e tetto chiudono l’involucro: isolamento e tenuta all’acqua.</p><p>Impianti, finiture e luci accese. Le chiavi sono tue.</p></div>
+ <div class="m-meter"><div class="m-bpct"><b>0</b><small>%</small></div><div class="m-track"><i></i></div></div></div><div></div><ul class="m-bsteps"><li>Fondazioni</li><li>Struttura</li><li>Copertura</li><li>Consegna</li></ul></div>
+ <span class="m-credit">Foto: Unsplash · Wikimedia Commons (CC BY-SA)</span></div></section>
+<section class="m-hs" id="cantieri"><div class="stick"><div class="track"><div class="intro"><span class="eyeb">Atelier in cantiere</span><h2>Progetti<br><em>in divenire.</em></h2><p>Le opere che stanno prendendo forma nei nostri cantieri, in tutta Italia.</p><div class="hint">Scorri</div></div><a class="m-hcard" href="#"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80" alt=""><span class="idx">01 / 04</span><div class="hinfo"><h3>Casa del Pino</h3><dl><div><dt>Superficie</dt><dd>340 m²</dd></div><div><dt>Durata</dt><dd>13 mesi</dd></div><div><dt>Puntualità</dt><dd>100%</dd></div></dl></div></a><a class="m-hcard" href="#"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1400&q=80" alt=""><span class="idx">02 / 04</span><div class="hinfo"><h3>Padiglione Ulivi</h3><dl><div><dt>Superficie</dt><dd>260 m²</dd></div><div><dt>Durata</dt><dd>10 mesi</dd></div><div><dt>Puntualità</dt><dd>100%</dd></div></dl></div></a><a class="m-hcard" href="#"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=80" alt=""><span class="idx">03 / 04</span><div class="hinfo"><h3>Villa Orizzonte</h3><dl><div><dt>Superficie</dt><dd>480 m²</dd></div><div><dt>Durata</dt><dd>17 mesi</dd></div><div><dt>Puntualità</dt><dd>100%</dd></div></dl></div></a><a class="m-hcard" href="#"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1400&q=80" alt=""><span class="idx">04 / 04</span><div class="hinfo"><h3>Rifugio Dolomiti</h3><dl><div><dt>Superficie</dt><dd>210 m²</dd></div><div><dt>Durata</dt><dd>9 mesi</dd></div><div><dt>Puntualità</dt><dd>100%</dd></div></dl></div></a></div></div></section>
+<section class="stats">
+  <hr><div><strong>145+</strong><span class="cap">Progetti consegnati</span></div><hr>
+  <div><strong>21</strong><span class="cap">Anni di pratica</span></div><hr>
+  <div><strong>36</strong><span class="cap">Riconoscimenti</span></div><hr>
+  <div><strong>14</strong><span class="cap">Regioni servite</span></div><hr>
+</section>
+
+<section class="svc wrap" id="servizi">
+  <span class="cap dash" style="padding-left:60px">I nostri servizi</span>
+  <div class="grid">
+    <div><svg viewBox="0 0 32 32"><path d="M4 28V14a12 12 0 0 1 24 0v14M4 28h24M16 2v26"/></svg><h3 class="cap">Architettura</h3><p>Architettura senza tempo, modellata su contesto, funzione e dettaglio.</p><a class="cap arrow" href="#">Scopri</a></div>
+    <div><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M4 16h24M6 11h20M6 21h20"/></svg><h3 class="cap">Interior design</h3><p>Interni che bilanciano proporzione, luce e materia nel quotidiano.</p><a class="cap arrow" href="#">Scopri</a></div>
+    <div><svg viewBox="0 0 32 32"><path d="M4 4h24v24H4zM4 28 28 4M16 4v12h12"/></svg><h3 class="cap">Costruzione</h3><p>Cantieri gestiti chiavi in mano, con un solo referente dall’inizio alla fine.</p><a class="cap arrow" href="#">Scopri</a></div>
+    <div><svg viewBox="0 0 32 32"><path d="M4 4v24M4 8h20l-6 6H4M10 14v14M10 20h18"/></svg><h3 class="cap">Arredo su misura</h3><p>Arredi e falegnameria realizzati con precisione per completare la visione.</p><a class="cap arrow" href="#">Scopri</a></div>
+  </div>
+</section>
+
+<section class="testi">
+  <span class="cap">Parola ai clienti</span>
+  <blockquote>“Ci hanno ascoltati prima ancora di disegnare. Il risultato è una casa calma, luminosa, esattamente nostra.”</blockquote>
+  <span class="cap">Famiglia Bernardi — Casa sul Crinale</span>
+</section>
+
+<section class="contact" id="contatti">
+  <div class="intro"><h2>Costruiamo<br>qualcosa di<br>eccezionale.</h2><hr><p>Raccontaci il tuo progetto: il nostro team ti risponderà entro due giorni lavorativi.</p></div>
+  <div><form onsubmit="return false">
+    <label>Nome<input></label><label>Email<input type="email"></label>
+    <label>Tipo di progetto<select><option></option><option>Nuova costruzione</option><option>Ristrutturazione</option><option>Interior</option></select></label>
+    <label>Raccontaci il tuo progetto<textarea></textarea></label>
+    <button class="btn cap arrow" style="border:0;cursor:pointer;font:inherit;font-size:11px">Invia la richiesta</button>
+  </form></div>
+  <div class="info"><svg width="54" height="54" viewBox="0 0 54 54" fill="none" stroke="#1d1d1b"><path d="M4 50h46M12 50V22l10-6v34M22 50V6l12 8v36M34 50V26l8 4v20"/></svg>
+    <div class="logo">NORTHLINE<small>ATELIER</small></div>
+    <ul><li>Via Brera 28, 20121 Milano</li><li>studio@northlineatelier.it</li><li>+39 02 1234 5678</li></ul>
+    <span class="cap">Instagram &nbsp;|&nbsp; LinkedIn &nbsp;|&nbsp; Pinterest</span></div>
+</section>
+<footer><span>© 2026 Northline Atelier. Tutti i diritti riservati.</span><span>Privacy &nbsp;&nbsp; Termini</span></footer>
+<!-- ===== MOTION LAYER ===== -->
+<style>
+:root{--m-bg:#f7f4ef;--m-ink:#1d1d1b;--m-acc:#5c5e45;--m-ring:rgba(29,29,27,.45);--m-font:"Cormorant Garamond";--m-hbg:#efebe4;--m-hink:#1d1d1b;--m-mbg:#f7f4ef;--m-rad:0px;--m-hfont:400 clamp(38px,3.8vw,56px)/1.05 "Cormorant Garamond";--m-cfont:400 34px/1.05 "Cormorant Garamond";--m-mfont:400 clamp(32px,4vw,60px)/1.18 "Cormorant Garamond"}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+::selection{background:var(--m-acc);color:var(--m-bg)}
+.m-loader{position:fixed;inset:0;z-index:9999;background:var(--m-bg);color:var(--m-ink);display:flex;align-items:flex-end;justify-content:space-between;padding:40px 48px;transition:clip-path 1.1s cubic-bezier(.77,0,.18,1);clip-path:inset(0 0 0 0)}
+.m-loader.out{clip-path:inset(0 0 100% 0)}
+.m-loader b{font:500 clamp(40px,8vw,110px)/1 var(--m-font,inherit);letter-spacing:-.03em}
+.m-loader span{font-size:13px;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
+.m-loader i{position:absolute;left:0;bottom:0;height:2px;background:var(--m-acc);width:0;transition:width .2s linear}
+.m-bar{position:fixed;top:0;left:0;height:2px;background:var(--m-acc);z-index:9000;width:100%;transform-origin:0 50%;transform:scaleX(0)}
+@media (pointer:fine){html.m-cur,html.m-cur *{cursor:none!important}}
+.m-dot,.m-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9998;border-radius:50%;will-change:transform}
+.m-dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--m-acc)}
+.m-ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:1px solid var(--m-ring);display:grid;place-items:center;transition:width .45s cubic-bezier(.22,1,.36,1),height .45s cubic-bezier(.22,1,.36,1),margin .45s cubic-bezier(.22,1,.36,1),background .35s,border-color .35s}
+.m-ring em{font:600 10px/1 inherit;font-style:normal;letter-spacing:.16em;text-transform:uppercase;color:var(--m-bg);opacity:0;transition:opacity .3s}
+.m-ring.link{width:64px;height:64px;margin:-32px 0 0 -32px;border-color:var(--m-acc);background:color-mix(in srgb,var(--m-acc) 12%,transparent)}
+.m-ring.view{width:96px;height:96px;margin:-48px 0 0 -48px;background:var(--m-acc);border-color:var(--m-acc)}
+.m-ring.view em{opacity:1}
+.m-ring.down{scale:.85}
+@media (pointer:coarse){.m-dot,.m-ring{display:none}}
+.m-rv{opacity:0;transform:translate3d(0,46px,0);transition:opacity 1.1s cubic-bezier(.22,1,.36,1),transform 1.1s cubic-bezier(.22,1,.36,1);transition-delay:var(--d,0s)}
+.m-rv.in{opacity:1;transform:none}
+.m-ln{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.m-ln>span{display:inline-block;transform:translate3d(0,110%,0) rotate(3deg);transform-origin:0 100%;transition:transform 1.3s cubic-bezier(.19,1,.22,1);transition-delay:var(--d,0s)}
+.m-go .m-ln>span{transform:none}
+.m-img{clip-path:inset(100% 0 0 0);transition:clip-path 1.4s cubic-bezier(.77,0,.18,1);transition-delay:var(--d,0s)}
+.m-img img{transform:scale(1.3);transition:transform 2s cubic-bezier(.22,1,.36,1);transition-delay:var(--d,0s)}
+.m-img.in{clip-path:inset(0 0 0 0)}.m-img.in img{transform:scale(1)}
+.m-par{overflow:hidden}.m-par img{will-change:transform}
+.m-hov img{transition:transform 1.2s cubic-bezier(.22,1,.36,1)!important}
+.m-hov:hover img{transform:scale(1.07)!important}
+.m-mag{transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.m-num{font-variant-numeric:tabular-nums}
+
+/* === cantiere reale: rivelazione a scorrimento === */
+.m-build{position:relative;height:420vh;background:#0b0b0b;color:#fff}
+.m-build .stick{position:sticky;top:0;height:100vh;overflow:hidden}
+.m-ly{position:absolute;inset:0;clip-path:inset(calc(var(--c,1)*100%) 0 0 0);will-change:clip-path}
+.m-ly:first-child{--c:0}
+.m-ly img{width:100%;height:100%;object-fit:cover;transform:scale(calc(1.18 - var(--k,0)*.18));will-change:transform}
+.m-ly:after{content:"";position:absolute;left:0;right:0;top:calc(var(--c,1)*100%);height:2px;background:var(--m-acc);box-shadow:0 0 24px var(--m-acc);opacity:calc(var(--c,0)*(1 - var(--c,0))*4)}
+.m-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78) 0,rgba(0,0,0,.35) 45%,rgba(0,0,0,.05) 70%),linear-gradient(0deg,rgba(0,0,0,.55),transparent 40%);pointer-events:none}
+.m-bui{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,520px) 1fr auto;align-items:end;gap:40px;padding:0 6vw 9vh}
+.m-bui .eyeb{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--m-acc)}
+.m-bui h2{font:var(--m-hfont);margin:16px 0 14px;color:#fff}
+.m-titles{position:relative;height:1.3em;margin-top:14px;font:var(--m-hfont);overflow:hidden;margin-bottom:12px}
+.m-titles span{position:absolute;left:0;top:0;transform:translateY(110%);transition:transform .9s cubic-bezier(.19,1,.22,1)}
+.m-titles span.on{transform:none}.m-titles span.past{transform:translateY(-110%)}
+.m-descs{position:relative;min-height:3.4em}
+.m-descs p{position:absolute;inset:0;opacity:0;transform:translateY(12px);transition:opacity .6s,transform .8s cubic-bezier(.22,1,.36,1);color:rgba(255,255,255,.78);max-width:420px}
+.m-descs p.on{opacity:1;transform:none}
+.m-meter{display:flex;align-items:flex-end;gap:22px;margin-top:26px}
+.m-bpct{font:500 clamp(64px,8vw,120px)/.85 var(--m-font,inherit);letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.m-bpct small{font-size:.32em;opacity:.6;margin-left:4px}
+.m-track{flex:1;max-width:240px;height:2px;background:rgba(255,255,255,.25);position:relative;margin-bottom:14px}
+.m-track i{position:absolute;inset:0;background:var(--m-acc);transform-origin:0 50%;transform:scaleX(var(--p,0))}
+.m-bsteps{list-style:none;display:grid;gap:14px;justify-self:end;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.m-bsteps li{display:flex;gap:14px;align-items:center;opacity:.4;transition:opacity .5s}
+.m-bsteps li:before{content:"";width:22px;height:1px;background:currentColor;transition:width .6s cubic-bezier(.22,1,.36,1),background .4s}
+.m-bsteps li.on{opacity:1}.m-bsteps li.on:before{width:48px;background:var(--m-acc)}
+.m-btop{position:absolute;top:30px;left:6vw;right:6vw;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.m-credit{position:absolute;right:16px;bottom:10px;font-size:10px;color:rgba(255,255,255,.45)}
+/* === galleria orizzontale === */
+.m-hs{position:relative;background:var(--m-hbg);color:var(--m-hink)}
+.m-hs .stick{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center}
+.m-hs .track{display:flex;gap:3vw;padding:0 6vw;will-change:transform;align-items:center}
+.m-hs .intro{flex:0 0 min(420px,80vw)}
+.m-hs .intro .eyeb{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--m-acc)}
+.m-hs .intro h2{font:var(--m-hfont);margin:16px 0 18px}
+.m-hs .intro p{opacity:.7}
+.m-hs .hint{margin-top:30px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;display:flex;gap:14px;align-items:center}
+.m-hs .hint:after{content:"";width:60px;height:1px;background:var(--m-acc)}
+.m-hcard{flex:0 0 min(46vw,640px);height:64vh;position:relative;overflow:hidden;border-radius:var(--m-rad,0);color:#fff}
+.m-hcard img{width:100%;height:100%;object-fit:cover;transform:scale(1.12) translateX(var(--sx,0));transition:filter .6s}
+.m-hcard:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.75),transparent 55%)}
+.m-hcard .hinfo{position:absolute;left:28px;right:28px;bottom:24px;z-index:2}
+.m-hcard .idx{position:absolute;top:22px;left:28px;z-index:2;font-size:12px;letter-spacing:.2em}
+.m-hcard h3{font:var(--m-cfont);margin-bottom:14px}
+.m-hcard dl{display:flex;gap:30px;border-top:1px solid rgba(255,255,255,.3);padding-top:14px}
+.m-hcard dt{font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.65}
+.m-hcard dd{font-size:22px;font-weight:500}
+/* === manifesto === */
+.m-mf{background:var(--m-mbg,var(--m-hbg));color:var(--m-hink);padding:22vh 6vw 16vh}
+.m-mf .eyeb{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--m-acc)}
+.m-mf .txt{font:var(--m-mfont);max-width:1150px;margin:26px 0 12vh}
+.m-mf .w{opacity:.14;transition:opacity .25s linear}
+.m-mf .w.on{opacity:1}
+.m-mf .w.acc{color:var(--m-acc)}
+.m-mf .row{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid color-mix(in srgb,var(--m-hink) 20%,transparent)}
+.m-mf .row div{padding:28px 20px 0 0}
+.m-mf .row strong{display:block;font:500 clamp(42px,5vw,72px)/1 var(--m-font,inherit);letter-spacing:-.04em}
+.m-mf .row span{font-size:13px;opacity:.65}
+@media(max-width:900px){.m-bui{grid-template-columns:1fr;padding-bottom:6vh}.m-bsteps{justify-self:start;grid-template-columns:1fr 1fr}.m-hcard{flex-basis:80vw;height:58vh}.m-mf .row{grid-template-columns:1fr 1fr;gap:20px}}
+@media (prefers-reduced-motion:reduce){.m-rv,.m-ln>span,.m-img,.m-img img{transition:none!important;opacity:1!important;transform:none!important;clip-path:none!important}.m-loader{display:none}.m-mf .w{opacity:1}}
+</style>
+
+<div class="m-loader" aria-hidden="true"><b>Northline</b><span id="m-count">000</span><i id="m-lbar"></i></div>
+<div class="m-bar"></div>
+<div class="m-dot"></div><div class="m-ring"><em>Vedi</em></div>
+
+<script>window.MOTION={"split": ".hero h1", "hero": ".hero .tx", "heroBg": "", "reveal": ".hero .cap,.hero p,.hero .btn,.feat .row,.card,.studio>div:last-child>*,.stats>div,.svc>.cap,.svc .grid>div,.testi>*,.contact .intro>*,form label,form button,.info>*,.m-mf .eyeb,.m-mf .row>div,.m-hs .intro>*", "imgs": ".studio .ph", "par": ".hero .ph", "hover": ".card,.studio .ph", "view": ".card", "mag": ".btn"}</script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(()=>{
+const C=window.MOTION||{},$=(s,r=document)=>s?[...r.querySelectorAll(s)]:[],RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),ease=t=>1-Math.pow(1-t,3),eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+let lenis=null;
+if(!RM&&window.Lenis){lenis=new Lenis({duration:1.25,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true});
+  $('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const h=a.getAttribute('href');if(h.length>1&&document.querySelector(h)){e.preventDefault();lenis.scrollTo(h,{offset:-20,duration:1.6})}}));}
+$(C.split).forEach(el=>{el.innerHTML=el.innerHTML.split(/<br\s*\/?>/i).map((l,i)=>`<span class="m-ln"><span style="--d:${.12*i+.05}s">${l}</span></span>`).join('')});
+$(C.reveal).forEach(el=>{if(!el.closest('.m-ln'))el.classList.add('m-rv')});
+$(C.imgs).forEach(el=>el.classList.add('m-img'));
+$(C.hover).forEach(el=>el.classList.add('m-hov'));
+$(C.par).forEach(el=>el.classList.add('m-par'));
+const groups=new Map();$('.m-rv,.m-img').forEach(el=>{const p=el.parentElement;groups.set(p,(groups.get(p)||0)+1);if(!el.style.getPropertyValue('--d'))el.style.setProperty('--d',((groups.get(p)-1)*.09)+'s')});
+/* manifesto words */
+$('.m-mf .txt').forEach(t=>{t.innerHTML=t.innerHTML.replace(/(<[^>]+>)|([^\s<]+)/g,(m,tag,w)=>tag?tag:`<span class="w">${w}</span>`);$('em .w',t).forEach(w=>w.classList.add('acc'))});
+/* contatori automatici su ogni numero */
+const NUM=/^(\s*[€+~]?\s*)(\d{1,3}(?:\.\d{3})+|\d+)(?:,(\d+))?(\s*(?:\+|%|k|K|mq|m²|mesi|anni|gg|h|x)?\s*)$/;
+const SKIP='.m-loader,.m-steps,.m-bui,nav,header,footer,script,style,.num,.n,.y,.idx,form,.info,.lang,.cart,time';
+const counters=[];
+document.querySelectorAll('body *').forEach(el=>{if(el.children.length||el.closest(SKIP))return;const s=el.textContent;const m=s.match(NUM);if(!m)return;
+  const intS=m[2],dec=m[3]||'';if(/^0\d/.test(intS))return;const n=parseFloat(intS.replace(/\./g,'')+(dec?'.'+dec:''));
+  if(!dec&&!m[4].trim()&&n>=1900&&n<=2100)return;
+  counters.push({el,pre:m[1],suf:m[4],n,dec:dec.length,sep:intS.includes('.')});el.classList.add('m-num');el.textContent=m[1]+(dec?(0).toFixed(dec.length).replace('.',','):'0')+m[4]});
+const fmt=(v,c)=>{let s=c.dec?v.toFixed(c.dec):String(Math.round(v));let[i,d]=s.split('.');if(c.sep)i=i.replace(/\B(?=(\d{3})+(?!\d))/g,'.');return i+(d?','+d:'')};
+const runCount=c=>{if(c.done)return;c.done=true;const t0=performance.now(),dur=1600+Math.min(900,c.n*2);const tick=t=>{const p=clamp((t-t0)/dur);c.el.textContent=c.pre+fmt(ease(p)*c.n,c)+c.suf;if(p<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');io.unobserve(e.target);const c=counters.find(c=>c.el===e.target);if(c)runCount(c)}),{threshold:.2,rootMargin:'0px 0px -5% 0px'});
+const startReveals=()=>{$('.m-rv,.m-img').forEach(el=>io.observe(el));counters.forEach(c=>io.observe(c.el));document.body.classList.add('m-go')};
+const L=document.querySelector('.m-loader');
+if(RM){L.remove();startReveals()}else{let n=0;const cnt=document.getElementById('m-count'),lb=document.getElementById('m-lbar');
+  const iv=setInterval(()=>{n=Math.min(100,n+Math.ceil(Math.random()*9));cnt.textContent=String(n).padStart(3,'0');lb.style.width=n+'%';
+    if(n>=100){clearInterval(iv);setTimeout(()=>{L.classList.add('out');setTimeout(startReveals,350);setTimeout(()=>L.remove(),1300)},250)}},55)}
+const dot=document.querySelector('.m-dot'),ring=document.querySelector('.m-ring');
+if(matchMedia('(pointer:fine)').matches&&!RM){document.documentElement.classList.add('m-cur');
+  let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate3d(${mx}px,${my}px,0)`});
+  addEventListener('mousedown',()=>ring.classList.add('down'));addEventListener('mouseup',()=>ring.classList.remove('down'));
+  const loop=()=>{rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.transform=`translate3d(${rx}px,${ry}px,0)`;requestAnimationFrame(loop)};loop();
+  document.addEventListener('mouseover',e=>{const v=e.target.closest((C.view?C.view+',':'')+'.m-hcard'),a=e.target.closest('a,button,input,select,textarea');ring.classList.toggle('view',!!v);ring.classList.toggle('link',!v&&!!a)});
+  $(C.mag||'.btn').forEach(b=>{b.classList.add('m-mag');b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`});b.addEventListener('mouseleave',()=>b.style.transform='')});
+}else{dot.remove();ring.remove()}
+/* elementi guidati dallo scroll */
+const bar=document.querySelector('.m-bar'),hero=document.querySelector(C.hero||'none'),heroBg=document.querySelector(C.heroBg||'none'),pars=$('.m-par img');
+const B=document.querySelector('.m-build'),lys=B?$('.m-ly',B):[],ttl=B?$('.m-titles span',B):[],dsc=B?$('.m-descs p',B):[],bst=B?$('.m-bsteps li',B):[],bpct=B&&B.querySelector('.m-bpct b'),btr=B&&B.querySelector('.m-track'),bph=B&&B.querySelector('.m-phase');
+const HS=$('.m-hs').map(s=>({s,t:s.querySelector('.track'),cards:$('.m-hcard img',s)}));
+const sizeHS=()=>HS.forEach(h=>{h.dist=Math.max(0,h.t.scrollWidth-innerWidth);h.s.style.height=(h.dist+innerHeight)+'px'});sizeHS();addEventListener('resize',sizeHS);
+const MF=$('.m-mf').map(s=>({s,w:$('.w',s)}));
+let lastIdx=-1;
+const frame=()=>{const y=scrollY,H=document.documentElement.scrollHeight-innerHeight,vh=innerHeight;
+  bar.style.transform=`scaleX(${H>0?y/H:0})`;
+  if(RM)return;
+  if(hero){const p=clamp(y/vh);hero.style.transform=`translate3d(0,${p*120}px,0)`;hero.style.opacity=1-p*1.1}
+  if(heroBg)heroBg.style.backgroundPositionY=`calc(50% + ${y*.35}px)`;
+  pars.forEach(img=>{const r=img.parentElement.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;img.style.transform=`translate3d(0,${(r.top+r.height/2-vh/2)/vh*-60}px,0) scale(1.18)`});
+  if(B){const r=B.getBoundingClientRect(),p=clamp(-r.top/(r.height-vh)),n=lys.length,t=p*(n-1);
+    lys.forEach((l,i)=>{if(i){const c=1-eio(clamp((t-(i-1)-.18)/.64));l.style.setProperty('--c',c)}l.style.setProperty('--k',clamp(t-i+1,0,2)/2)});
+    const idx=Math.min(n-1,Math.round(t-.0));
+    if(idx!==lastIdx){lastIdx=idx;ttl.forEach((s,i)=>{s.classList.toggle('on',i===idx);s.classList.toggle('past',i<idx)});dsc.forEach((d,i)=>d.classList.toggle('on',i===idx));bst.forEach((s,i)=>s.classList.toggle('on',i<=idx));if(bph)bph.textContent=String(idx+1).padStart(2,'0')}
+    bpct.textContent=Math.round(p*100);btr.style.setProperty('--p',p)}
+  HS.forEach(h=>{const r=h.s.getBoundingClientRect(),p=clamp(-r.top/Math.max(1,h.dist));h.t.style.transform=`translate3d(${-p*h.dist}px,0,0)`;h.cards.forEach(img=>{const b=img.parentElement.getBoundingClientRect();img.style.setProperty('--sx',((b.left+b.width/2-innerWidth/2)/innerWidth*-6)+'%')})});
+  MF.forEach(m=>{const r=m.s.querySelector('.txt').getBoundingClientRect(),p=clamp((vh*.85-r.top)/(r.height+vh*.35)),k=Math.floor(p*m.w.length*1.02);m.w.forEach((w,i)=>w.classList.toggle('on',i<k))});
+};
+if(lenis){const raf=t=>{lenis.raf(t);frame();requestAnimationFrame(raf)};requestAnimationFrame(raf)}else{addEventListener('scroll',frame,{passive:true});frame()}
+})();
+</script>
+<!-- ===== /MOTION LAYER ===== -->
+</body>
+</html>
