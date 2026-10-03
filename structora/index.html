@@ -137,11 +137,52 @@ footer{display:flex;justify-content:space-between;padding:26px 28px;border-top:1
   <h2>Diamo forma<br>al tuo <em>spazio</em></h2>
   <div><p>Raccontaci il tuo progetto: entro 48 ore un architetto ti propone una prima visione e un calendario lavori.</p><a class="btn" href="#">Inizia il tuo progetto ↗</a></div>
 </section>
-<footer><span>© 2026 Structora Studio</span><span>Instagram · LinkedIn · Pinterest</span></footer>
+<footer class="pf" id="footer" style="--pf-bg:#faf7f4;--pf-ink:#111;--pf-mut:#5f5c58;--pf-line:#e2ddd6;--pf-acc:#e8704a;--pf-ctabg:#f1ece5;--pf-ctabd:0;--pf-rad:0;--pf-btnbg:#111;--pf-btnink:#fff;--pf-btnhover:#e8704a;--pf-hfont:600 clamp(40px,5.6vw,84px)/.92 'Inter Tight';--pf-htt:uppercase;--pf-hls:-.045em;--pf-logofont:700 24px/1 'Inter Tight';--pf-logols:-.02em;--pf-legalbg:#faf7f4"><style id="pf-css">
+footer.pf{display:block;background:var(--pf-bg);color:var(--pf-ink);padding:0;margin:0;font-size:14px;line-height:1.65;letter-spacing:normal;text-transform:none;border:0}
+.pf a{color:inherit;text-decoration:none}
+.pf-in{max-width:1180px;margin:0 auto;padding:0 32px}
+.pf-cta{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:end;padding:72px 40px;margin:0 0 64px;background:var(--pf-ctabg);border:var(--pf-ctabd);border-radius:var(--pf-rad);color:var(--pf-ctaink,var(--pf-ink))}
+.pf-eyeb{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--pf-acc);font-weight:600}
+.pf-h{font:var(--pf-hfont);text-transform:var(--pf-htt,none);letter-spacing:var(--pf-hls,normal);margin:14px 0 14px;color:inherit}
+.pf-h em{font-style:var(--pf-emstyle,normal);color:var(--pf-acc)}
+.pf-cta p{opacity:.72;max-width:480px}
+.pf-ctab{display:flex;flex-direction:column;gap:14px;align-items:flex-start;justify-self:end}
+.pf-btn{display:inline-flex;align-items:center;gap:12px;background:var(--pf-btnbg);color:var(--pf-btnink)!important;padding:17px 30px;border-radius:var(--pf-brad,4px);font-weight:600;font-size:15px;transition:background .3s,transform .3s}
+.pf-btn:hover{background:var(--pf-btnhover)}
+.pf-tel{font-size:14px;opacity:.75;border-bottom:1px solid currentColor;padding-bottom:2px}
+.pf-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.4fr;gap:40px;padding-bottom:52px}
+.pf-logo{font:var(--pf-logofont);letter-spacing:var(--pf-logols,.08em);display:block;margin-bottom:14px}
+.pf-brand p{color:var(--pf-mut);max-width:300px;margin-bottom:22px}
+.pf-soc{display:flex;gap:10px}
+.pf-soc a{width:40px;height:40px;border:1px solid var(--pf-line);border-radius:50%;display:grid;place-items:center;transition:background .3s,border-color .3s,color .3s}
+.pf-soc a:hover{background:var(--pf-acc);border-color:var(--pf-acc);color:var(--pf-btnink)}
+.pf h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin:0 0 18px;color:var(--pf-ink)}
+.pf ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.pf ul a{color:var(--pf-mut);transition:color .25s}.pf ul a:hover{color:var(--pf-acc)}
+.pf-contact li{display:grid;grid-template-columns:20px 1fr;gap:12px;color:var(--pf-mut)}
+.pf-contact svg{color:var(--pf-acc);margin-top:2px}
+.pf-legal{border-top:1px solid var(--pf-line);padding:22px 0 26px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12.5px;color:var(--pf-legalink,var(--pf-mut));background:var(--pf-legalbg,transparent)}
+.pf-legal .pf-links{display:flex;gap:26px;flex-wrap:wrap}
+.pf-legal a:hover{color:var(--pf-legalhover,var(--pf-acc))}
+@media(max-width:900px){.pf-cta{grid-template-columns:1fr;padding:44px 24px;margin-bottom:44px}.pf-ctab{justify-self:start}.pf-grid{grid-template-columns:1fr 1fr;gap:34px 24px}.pf-brand{grid-column:1/-1}}
+@media(max-width:520px){.pf-in{padding:0 16px}.pf-grid{grid-template-columns:1fr}.pf-legal{flex-direction:column}}
+</style>
+<div class="pf-in" style="padding-top:72px">
+ <div class="pf-cta m-rv"><div><span class="pf-eyeb">Consulenza gratuita</span><h2 class="pf-h">Contattaci per una<br><em>consulenza gratuita</em></h2><p>Raccontaci il tuo progetto: un nostro tecnico ti ricontatta entro 24 ore lavorative per un primo confronto, gratuito e senza impegno.</p></div>
+ <div class="pf-ctab"><a class="pf-btn" href="mailto:studio@structora.it?subject=Richiesta%20consulenza%20gratuita">Contattaci per una consulenza gratuita →</a><a class="pf-tel" href="tel:+390288997766">oppure chiama il +39 02 8899 7766</a></div></div>
+ <div class="pf-grid">
+  <div class="pf-brand m-rv"><a class="pf-logo" href="#">STRUCTORA</a><p>Studio di architettura e costruzione. Disegniamo e realizziamo case precise come un progetto, calde come un ricordo.</p><div class="pf-soc"><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg></a><a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a></div></div>
+  <div class="m-rv"><h4>Esplora</h4><ul><li><a href="#">Home</a></li><li><a href="#servizi">Servizi</a></li><li><a href="#cantiere">Il cantiere</a></li><li><a href="#progetti">Progetti</a></li><li><a href="#contatti">Contatti</a></li></ul></div>
+  <div class="m-rv"><h4>Servizi</h4><ul><li><a href="#servizi">Progettazione architettonica</a></li><li><a href="#servizi">Nuove costruzioni</a></li><li><a href="#servizi">Ristrutturazioni</a></li><li><a href="#servizi">Interior design</a></li></ul></div>
+  <div class="m-rv"><h4>Contatti</h4><ul class="pf-contact"><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Via Tortona 31<br>20144 Milano (MI)</span></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><a href="tel:+390288997766">+39 02 8899 7766</a></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:studio@structora.it">studio@structora.it</a></li><li><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Lun–Ven 8:30–18:30<br>Sab su appuntamento</span></li></ul></div>
+ </div></div>
+ <div class="pf-legal-wrap" style="background:var(--pf-legalbg,transparent)"><div class="pf-in pf-legal"><span>© 2026 Structora Studio S.r.l. · P.IVA IT00000000000</span><div class="pf-links"><a href="../legale.html#privacy">Privacy policy</a><a href="../legale.html#cookie">Cookie policy</a><a href="../legale.html#termini">Termini di servizio</a></div></div></div>
+</footer>
 </div>
 <!-- ===== MOTION LAYER ===== -->
 <style>
 :root{--m-bg:#faf7f4;--m-ink:#111;--m-acc:#e8704a;--m-ring:rgba(17,17,17,.5);--m-font:"Inter Tight";--m-hbg:#f1ece5;--m-hink:#111;--m-mbg:#faf7f4;--m-rad:2px;--m-hfont:500 clamp(40px,4.6vw,66px)/.95 "Inter Tight";--m-cfont:500 32px/1 "Inter Tight";--m-mfont:500 clamp(32px,4.2vw,64px)/1.05 "Inter Tight"}
+html,body{overflow-x:clip}
 html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
 ::selection{background:var(--m-acc);color:var(--m-bg)}
 .m-loader{position:fixed;inset:0;z-index:9999;background:var(--m-bg);color:var(--m-ink);display:flex;align-items:flex-end;justify-content:space-between;padding:40px 48px;transition:clip-path 1.1s cubic-bezier(.77,0,.18,1);clip-path:inset(0 0 0 0)}
